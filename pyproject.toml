@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "natureos-core"
+version = "0.1.0"
+description = "Computational ecology framework for nature-positive design"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "NatureOS"}
+]
+keywords = [
+    "ecology",
+    "landscape-design",
+    "biodiversity",
+    "urban-planning",
+    "computational-ecology",
+    "arid-environments",
+    "MENA",
+    "species-modeling",
+    "water-budget",
+    "habitat-suitability",
+    "open-source",
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.10"
+
+[project.urls]
+Homepage = "https://github.com/nature-os/core"
+Documentation = "https://github.com/nature-os/docs"
+Repository = "https://github.com/nature-os/core"
+Issues = "https://github.com/nature-os/core/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
