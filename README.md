@@ -2,7 +2,7 @@
 
 **Open-source computational ecology framework for AI-powered nature-positive design.**
 
-NatureOS Core is the computational foundation of the NatureOS ecosystem. It provides the reusable building blocks — data models, algorithms, and AI reasoning pipelines — that developers, researchers, landscape architects, urban planners, and municipalities need to build software that designs living ecosystems instead of decorative landscapes.
+NatureOS Core is the computational foundation of the NatureOS ecosystem. It provides the reusable building blocks data models, algorithms, and AI reasoning pipelines — that developers, researchers, landscape architects, urban planners, and municipalities need to build software that designs living ecosystems instead of decorative landscapes.
 
 ---
 
@@ -18,7 +18,7 @@ Tomorrow's design tools should be able to answer:
 
 > "Design a public space that reduces urban heat by 4°C, maximizes native biodiversity, uses less than 300mm of irrigation annually, sequesters carbon, and improves ecosystem health across the site."
 
-NatureOS Core exists to provide the computational infrastructure that makes these workflows possible — not as a standalone application, but as open foundations that anyone can integrate into their own tools.
+NatureOS Core exists to provide the computational infrastructure that makes these workflows possible - not as a standalone application, but as open foundations that anyone can integrate into their own tools.
 
 ---
 
@@ -95,11 +95,11 @@ text
 
 ## Starting Region: MENA
 
-NatureOS Core launches with a focus on UAE and Arabian Peninsula ecosystems — one of the world's most climatically extreme and ecologically underserved regions.
+NatureOS Core launches with a focus on UAE and Arabian Peninsula ecosystems - one of the world's most climatically extreme and ecologically underserved regions.
 
 ### Why MENA first?
 
-- Arid environments demand the highest level of ecological intelligence — every drop of water, every degree of heat, every species choice matters
+- Arid environments demand the highest level of ecological intelligence - every drop of water, every degree of heat, every species choice matters
 - Most ecological software is built for temperate climates and performs poorly in desert conditions
 - The UAE has significant native biodiversity that is poorly represented in digital tools
 - Local expertise exists but is not systematized into open, reusable infrastructure
@@ -146,7 +146,7 @@ While starting in MENA, NatureOS is architected to support diverse ecosystems wo
 - Urban environments globally
 - Agricultural and agroforestry landscapes
 
-The platform enables regional ecological knowledge to become part of a shared, computable global framework — contributed and maintained by local experts.
+The platform enables regional ecological knowledge to become part of a shared, computable global framework - contributed and maintained by local experts.
 
 ---
 
