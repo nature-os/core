@@ -1,23 +1,19 @@
 NatureOS Core
 
-Open-source computational ecology framework for AI-powered nature-positive design.
+Open infrastructure for computational ecology. The ecological equivalent of GDAL or OpenStreetMap a foundation others build upon.
 
-NatureOS Core is the computational foundation of the NatureOS ecosystem. It provides the reusable building blocks data models, algorithms, and AI reasoning pipelines that architects, developers, researchers, landscape architects, urban planners, and municipalities need to build software that designs living ecosystems instead of decorative landscapes.
-
+NatureOS Core provides the reusable building blocks: data models, computational engines, and AI reasoning pipelines that architects, developers, researchers, landscape architects, urban planners, municipalities and governments need to build software that designs living ecosystems instead of decorative landscapes.
 
 Vision
 The future of cities and landscapes should be designed as interconnected ecosystems.
 
-Today, when we design outdoor space, we ask: "Design me a park."
+Why NatureOS Exists
+The world has open infrastructure for geography (GDAL, OpenStreetMap), for scientific computing (NumPy, SciPy), and for machine learning (PyTorch, scikit-learn).
 
-Tomorrow's design tools should be able to answer: "Design a public space that reduces urban heat by 4°C, maximizes native biodiversity, uses less than 300mm of irrigation annually, sequesters carbon, and improves ecosystem health across the site."
+There is no equivalent for computational ecology.
 
-NatureOS Core exists to provide the computational infrastructure that makes these workflows possible - not as a standalone application, but as open foundations that anyone can integrate into their own tools.
-
-
-The Problem We're Solving
-
-Modern design software is extraordinarily capable at geometry, visualization, and construction documentation. But ecological intelligence - knowing which species will thrive where, how much water they'll need, how they'll interact, what biodiversity value they'll create - remains fragmented across:
+The Problem We're Solving 
+Modern design software is extraordinarily capable at geometry, visualization, and construction documentation. But ecological intelligence knowing which species will thrive where, how much water they'll need, how they'll interact, what biodiversity value they'll create - remains fragmented across:
 
 - Scientific papers locked behind paywalls
 - Proprietary software with closed data models
@@ -26,63 +22,55 @@ Modern design software is extraordinarily capable at geometry, visualization, an
 
 There is no open, programmatic, composable foundation for computational ecology in the built environment.
 NatureOS Core is being built to become that foundation.
+NatureOS is infrastructure designed to be integrated into GIS platforms, CAD tools, AI co-pilots, municipal dashboards, and digital twins.
 
 
-What NatureOS Core Provides
-NatureOS Core is organized into three architectural layers:
+What NatureOS Provides
 
-Layer 1 - Domain Data Models
+Computational Engines
 
-Strongly-typed, validated data structures that represent ecological design concepts as code:
+Seven deterministic, testable, scientifically-grounded engines:
 
-- Species - botanical traits, growth form, water regime, salinity tolerance, thermal tolerance, wildlife value, root depth, canopy characteristics
-- Habitat - ecosystem type, soil profile, hydrology, microclimate, successional stage
-- Site - boundary, climate zone, topography, land use, existing vegetation, soil conditions
-- Design - planting zones, species palettes, irrigation strategies, spatial arrangements
-- Ecosystem - species associations, trophic interactions, functional groups, succession dynamics
+| Engine | What It Computes |
+|--------|------------------|
+| `HabitatSuitability` | Which species fit a site's climate, soil, and ecology |
+| `WaterBudget` | Irrigation demand for any planting design |
+| `BiodiversityIndex` | Shannon, Simpson, evenness, and native ratios |
+| `CarbonEstimator` | Biomass and soil carbon sequestration over time |
+| `SpeciesInteraction` | Compatibility, competition, and facilitation between species |
+| `UrbanHeatMitigation` | Shade provision and evapotranspirative cooling |
+| `DesignOptimizer` | Multi-objective evolutionary optimization of species palettes |
 
-Layer 2 - Computational Engines
+Domain Data Models
 
-Stateless algorithms that operate on the data models:
+Strongly-typed, validated representations of ecological design concepts: `Species`, `Site`, `SoilProfile`, `DesignBrief`, `Objective`, `Constraint`, and more.
 
-- Habitat Suitability - multi-criteria scoring for species × site combinations
-- Biodiversity Index - Shannon, Simpson, functional diversity, native/non-native ratios
-- Water Budget - evapotranspiration modeling, hydrozone optimization, irrigation demand
-- Carbon Estimator - above/below-ground biomass, soil organic carbon, sequestration rates
-- Urban Heat Mitigation - shade provision, evapotranspirative cooling, albedo effects
-- Species Interaction - compatibility, allelopathy, facilitation, competition
-- Design Optimizer - multi-objective optimization across ecological, aesthetic, and cost objectives
+AI Reasoning (Future)
 
-Layer 3 - AI Reasoning
-
-LLM-powered agents that compose the engines, interpret design intent, and generate ecological recommendations:
-
-- Ecology Advisor - conversational interface to the computational engines
-- Design Generator - generates species palettes and planting strategies from natural language briefs
-- Site Analyzer - interprets site conditions and recommends ecological interventions
-
+An AI orchestration layer that composes engines, interprets design intent, and generates recommendations — **strictly separated from the deterministic engines** to ensure scientific trust.
 
 Architecture
-┌─────────────────────────────────────────────────┐
+┌──────────────────────────────────────┐
 │ AI Reasoning Layer │
-│ (EcologyAdvisor, DesignGenerator, SiteAnalyzer) │
-├─────────────────────────────────────────────────┤
+│ (Calls engines. Never inside them.) │
+├──────────────────────────────────────┤
 │ Computational Engines │
-│ (HabitatSuitability, WaterBudget, Biodiversity, │
-│ CarbonEstimator, HeatMitigation, Optimizer) │
-├─────────────────────────────────────────────────┤
+│ (Deterministic. Testable. AI-free.) │
+├──────────────────────────────────────┤
 │ Domain Data Models │
-│ (Species, Habitat, Site, Design, Ecosystem) │
-├─────────────────────────────────────────────────┤
-│ External Integrations │
-│ (QGIS Plugin, APIs, CAD/BIM Connectors) │
-└─────────────────────────────────────────────────┘
+│ (Species, Site, DesignBrief...) │
+├──────────────────────────────────────┤
+│ Data & Integrations │
+│ (Community data, Certified data, │
+│ QGIS, APIs, CAD connectors) │
+└──────────────────────────────────────┘
+
+
+[Full Architecture Document →](docs/ARCHITECTURE.md)
+
 
 Starting Region: MENA
-
-NatureOS Core launches with a focus on UAE and Arabian Peninsula ecosystems - one of the world's most climatically extreme and ecologically underserved regions.
-
-Why MENA first?
+NatureOS launches with deep focus on UAE and Arabian Peninsula ecosystems as one of the world's most climatically extreme and ecologically underserved regions.
 
 - Arid environments demand the highest level of ecological intelligence - every drop of water, every degree of heat, every species choice matters
 - Most ecological software is built for temperate climates and performs poorly in desert conditions
@@ -101,25 +89,12 @@ Initial ecosystem coverage:
 | Urban parks & streetscapes | Prosopis cineraria, Ziziphus spina-christi, Phoenix dactylifera, Tephrosia apollinea |
 
 Reference institutions: Environment Agency – Abu Dhabi, Dubai Municipality, International Centre for Biosaline Agriculture (ICBA), Al Wathba Wetland Reserve, Jebel Hafeet National Park.
+11 species with full ecological parameters. Community-contributed. Certified versions available commercially.
+
+[Species Database →](https://github.com/nature-os/mena-species)
 
 
-
-Why NatureOS?
-Ecological intelligence should not be locked inside expensive software, inaccessible research, or individual expertise. It should be open infrastructure - like OpenStreetMap for geography, like Python's scientific stack for computation.
-
-NatureOS is designed to be integrated into:
-
-- AI design tools and co-pilots
-- CAD platforms (Rhino/Grasshopper, Revit)
-- GIS systems (QGIS, ArcGIS)
-- Urban planning workflows
-- Environmental simulations
-- Digital twin platforms
-- Web-based design applications
-
-
- Global Vision
-
+Global Vision
 While starting in MENA, NatureOS is architected to support diverse ecosystems worldwide:
 
 - Desert and arid ecosystems
@@ -132,108 +107,82 @@ While starting in MENA, NatureOS is architected to support diverse ecosystems wo
 The platform enables regional ecological knowledge to become part of a shared, computable global framework - contributed and maintained by local experts.
 
 
-Repository Ecosystem
-
-| Repository | Purpose |
-|------------|---------|
-| `nature-os/core` | Computational framework — data models, engines, AI reasoning (this repo) |
-| `nature-os/mena-species` | Structured ecological data for UAE and Arabian Peninsula |
-| `nature-os/qgis-plugin` | QGIS integration for spatial ecological design workflows |
-| `nature-os/docs` | Tutorials, API reference, ecological design guides |
-| `nature-os/examples` | Jupyter notebooks, case studies, worked design scenarios |
-
----
-
-## Usage Vision
+Quick Start
 
 ```python
-from natureos.core import Site, Species
-from natureos.core.engines import HabitatSuitability, WaterBudget
-from natureos.core.ai import EcologyAdvisor
+from natureos.data.mena_species import ALL_SPECIES, species_by_ecosystem
+from natureos.engines.habitat import HabitatSuitability
+from natureos.engines.water import WaterBudget
+from natureos.site import Site, ClimateZone, LandUse, SoilProfile
 
 # Define a site in Dubai
 site = Site(
     name="Al Barsha South Park",
-    climate_zone="BWh",
+    climate_zone=ClimateZone.BWH,
     soil=SoilProfile(texture="sandy_loam", salinity_dsm=4.2),
-    area_hectares=2.3
+    area_hectares=2.3,
+    land_use=LandUse.PUBLIC_PARK,
+    max_summer_temp_c=47.0,
 )
 
-# Query species adapted to urban park conditions in arid climate
-palette = Species.for_ecosystem("urban_park_arid")
-    .filter(water_regime="low", salinity_tolerance="moderate")
+# Find suitable species
+suitability = HabitatSuitability(site)
+results = suitability.evaluate_all(ALL_SPECIES)
 
-# Run ecological assessments
-suitability = HabitatSuitability(site).evaluate(palette)
-annual_water = WaterBudget(site).for_palette(palette).annual_demand()
+for r in results[:5]:
+    print(r.summary())
 
-# Generate design recommendations using AI reasoning
-advisor = EcologyAdvisor()
-design = advisor.generate(
-    brief="Public park maximizing shade and biodiversity, minimizing irrigation",
-    site=site,
-    palette=palette.top(15)
-)
+# Estimate water demand for top species
+top_species = [r.species for r in results[:5] if r.suitability_class.value in ("highly_suitable", "suitable")]
+water = WaterBudget(site)
+water_result = water.calculate(top_species)
+print(water_result.summary())
+Open-Core Model
+NatureOS follows an open-core model:
+
+Layer	Access	Pricing
+Core framework	Open source (Apache 2.0)	Free, forever
+Community data	Open source (Apache 2.0)	Free, forever
+Cloud API	Commercial	Subscription
+Enterprise	Commercial	Annual contract
+Scientific Certification	Commercial	Per-product
+The foundation is and will remain open. Commercial services fund sustainable development.
+
+API & Commercial Tiers →
+
+Repository Ecosystem
+Repository	Status	Purpose
+nature-os/core	✅ Active	Computational framework
+nature-os/mena-species	✅ Active	Structured ecological data
+nature-os/qgis-plugin Early	QGIS integration
+nature-os/docs	🔲 Planned	Centralized documentation
+nature-os/examples	🔲 Planned	Worked examples & tutorials
+nature-os/api	🔲 Planned	Cloud & Enterprise API (commercial)
 Roadmap
-Phase 1 - Foundation (Current)
-Project architecture and data model design
-
-Core Python package scaffold
-
-MENA species dataset v0.1 (20+ species with ecological parameters)
-
-HabitatSuitability engine
-
-WaterBudget engine
-
-QGIS plugin prototype
-
-Phase 2 - Computational Ecology
-BiodiversityIndex engine
-
-CarbonEstimator engine
-
-UrbanHeatMitigation engine
-
-SpeciesInteraction engine
-
-DesignOptimizer (multi-objective evolutionary algorithm)
-
-Phase 3 — AI & Ecosystem Platform
-EcologyAdvisor (LLM-powered reasoning)
-
-DesignGenerator and SiteAnalyzer agents
-
-CAD/Grasshopper integrations
-
-Developer SDKs and API
-
-Community-contributed regional ecosystem models
+Phase	Milestone	Status
+Foundation	Core data models, 7 engines, MENA dataset, architecture docs	✅
+AI Layer	EcologyAdvisor, DesignGenerator, SiteAnalyzer agents	🔲
+Integrations	QGIS plugin prototype, REST API specification	🔲
+Examples	Dubai Urban Park, Wadi Restoration, Mangrove Buffer notebooks	🔲
+Commercial	Cloud API, Certified Data products, Enterprise tier	🔲
+Contributing
+NatureOS welcomes contributors across disciplines ecologists, landscape architects, urban planners, software engineers, researchers.
 
 Contributing
 NatureOS welcomes contributors from multiple disciplines:
+Ecologists & botanists: species data, trait parameters, ecological relationships
+Landscape architects & urban planners: design scenarios, validation cases, regional knowledge
+Software developers: algorithms, integrations, tests, documentation
+Researchers: models, literature synthesis, methodological review
 
-Ecologists & botanists - species data, trait parameters, ecological relationships
-
-Landscape architects & urban planners - design scenarios, validation cases, regional knowledge
-
-Software developers - algorithms, integrations, tests, documentation
-
-Researchers - models, literature synthesis, methodological review
-
-See CONTRIBUTING.md for how to get involved.
+See CONTRIBUTING.md for guidelines and ARCHITECTURE.md for design philosophy.
 
 License
 NatureOS Core is released under the Apache 2.0 License. See LICENSE.
+The core framework and community data are open source. Commercial services are separate.
 
 Author
 NatureOS is created and maintained by Zahed, a computational architect and full-stack developer with 15 years of experience working at the intersection of architecture, urban planning, artificial intelligence, and digital platforms in the UAE.
 
-The project emerges from direct professional experience designing landscapes in arid environments where ecological performance, heat mitigation, water conservation, biodiversity support is fundamental to livability.
-
 Status
-Early development - establishing foundational architecture.
-
-NatureOS Core is currently in the data modeling and architecture phase. The framework is being designed from first principles to serve as long-term open infrastructure.
-
-We welcome early contributors interested in computational ecology, AI-assisted design, climate resilience, and open-source infrastructure for the built environment.
+NatureOS Core is currently in the data modeling and architecture phase. Pre-release foundational architecture established. Seven computational engines operational. MENA species dataset v0.1 published. We welcome early contributors interested in computational ecology, AI-assisted design, climate resilience, and open-source infrastructure for the built environment.
