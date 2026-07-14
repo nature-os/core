@@ -2,7 +2,7 @@ NatureOS Core
 
 Open-source computational ecology framework for AI-powered nature-positive design.
 
-NatureOS Core is the computational foundation of the NatureOS ecosystem. It provides the reusable building blocks data models, algorithms, and AI reasoning pipelines - that developers, researchers, landscape architects, urban planners, and municipalities need to build software that designs living ecosystems instead of decorative landscapes.
+NatureOS Core is the computational foundation of the NatureOS ecosystem. It provides the reusable building blocks data models, algorithms, and AI reasoning pipelines that architects, developers, researchers, landscape architects, urban planners, and municipalities need to build software that designs living ecosystems instead of decorative landscapes.
 
 
 Vision
