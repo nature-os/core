@@ -34,6 +34,13 @@ Prosopis_cineraria = Species(
     is_native=True,
     wildlife_value="Keystone species — provides shade, fodder, and habitat for birds and insects",
     carbon_sequestration_potential="high",
+    wildlife_value="Keystone species — provides shade, fodder, and habitat for birds and insects",
+    carbon_sequestration_potential="high",
+    wood_density_g_cm3=0.82,
+    carbon_fraction=0.48,
+    root_shoot_ratio=0.42,
+    shade_cooling_delta_c=16.0,
+    et_rate_mm_day=3.5,
 )
 
 Ziziphus_spina_christi = Species(
@@ -53,6 +60,11 @@ Ziziphus_spina_christi = Species(
     is_native=True,
     wildlife_value="Important pollinator species — attracts bees; fruits support birds",
     carbon_sequestration_potential="medium",
+    wood_density_g_cm3=0.75,
+    carbon_fraction=0.47,
+    root_shoot_ratio=0.38,
+    shade_cooling_delta_c=14.0,
+    et_rate_mm_day=4.0,
 )
 
 Acacia_tortilis = Species(
@@ -72,6 +84,11 @@ Acacia_tortilis = Species(
     is_native=True,
     wildlife_value="Nitrogen-fixing — improves soil fertility; provides browse and shade",
     carbon_sequestration_potential="medium",
+    wood_density_g_cm3=0.78,
+    carbon_fraction=0.47,
+    root_shoot_ratio=0.45,
+    shade_cooling_delta_c=13.0,
+    et_rate_mm_day=3.0,
 )
 
 Avicennia_marina = Species(
@@ -91,6 +108,11 @@ Avicennia_marina = Species(
     is_native=True,
     wildlife_value="Critical coastal habitat — nursery for fish, supports migratory birds, shoreline stabilization",
     carbon_sequestration_potential="high",
+    wood_density_g_cm3=0.72,
+    carbon_fraction=0.48,
+    root_shoot_ratio=0.55,
+    shade_cooling_delta_c=10.0,
+    et_rate_mm_day=6.5,
 )
 
 Phoenix_dactylifera = Species(
@@ -109,6 +131,11 @@ Phoenix_dactylifera = Species(
     is_native=False,  # Naturalized — culturally integral
     wildlife_value="Provides fruit, shade, and roosting habitat",
     carbon_sequestration_potential="medium",
+    wood_density_g_cm3=0.55,
+    carbon_fraction=0.45,
+    root_shoot_ratio=0.25,
+    shade_cooling_delta_c=12.0,
+    et_rate_mm_day=7.0,
 )
 
 Calligonum_comosum = Species(
@@ -374,6 +401,11 @@ Tamarix_aphylla = Species(
     is_native=True,
     wildlife_value="Windbreak and shade tree; salt-tolerant pioneer; habitat for birds in saline environments.",
     carbon_sequestration_potential="high",
+    wood_density_g_cm3=0.65,
+    carbon_fraction=0.47,
+    root_shoot_ratio=0.50,
+    shade_cooling_delta_c=15.0,
+    et_rate_mm_day=5.0,
 )
 
 Ziziphus_nummularia = Species(
