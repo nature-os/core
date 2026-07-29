@@ -586,7 +586,7 @@ Pulicaria_glutinosa = Species(
 
 ALL_SPECIES = [
     Prosopis_cineraria,
-    Ziziphus_spina-christi,
+    Ziziphus_spina_christi,
     Acacia_tortilis,
     Avicennia_marina,
     Phoenix_dactylifera,
