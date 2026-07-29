@@ -175,7 +175,7 @@ class CarbonEstimator:
         agc_kg = 0.0
         bgc_kg = 0.0
 
-        for sp, count in self.species_counts.items():
+         for sp, count in self.species_counts.items():
             agb_maturity = AGB_MATURITY_KG.get(sp.growth_form, 15.0)
             maturity_years = MATURITY_YEARS.get(sp.growth_form, 25)
 
@@ -184,12 +184,12 @@ class CarbonEstimator:
             growth_fraction = min(1.0, time_horizon / maturity_years)
             agb_per_plant = agb_maturity * growth_fraction
 
-            # Apply carbon fraction
-            carbon_fraction = CARBON_FRACTION.get(sp.growth_form, 0.47)
-            agc_per_plant = agb_per_plant * carbon_fraction
+            # Carbon fraction — use species-specific if available, else growth-form default
+            cf = sp.carbon_fraction if sp.carbon_fraction is not None else CARBON_FRACTION.get(sp.growth_form, 0.47)
+            agc_per_plant = agb_per_plant * cf
 
-            # Below-ground carbon via root-to-shoot ratio
-            root_ratio = ROOT_SHOOT_RATIO.get(sp.growth_form, 0.35)
+            # Root-to-shoot ratio — use species-specific if available, else growth-form default
+            root_ratio = sp.root_shoot_ratio if sp.root_shoot_ratio is not None else ROOT_SHOOT_RATIO.get(sp.growth_form, 0.35)
             bgc_per_plant = agc_per_plant * root_ratio
 
             agc_kg += agc_per_plant * count
