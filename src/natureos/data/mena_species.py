@@ -154,6 +154,11 @@ Calligonum_comosum = Species(
     is_native=True,
     wildlife_value="Dune stabilization; provides forage for camels and wildlife",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.60,
+    carbon_fraction=0.47,
+    root_shoot_ratio=0.55,
+    shade_cooling_delta_c=7.0,
+    et_rate_mm_day=1.5,
 )
 
 Haloxylon_salicornicum = Species(
@@ -173,6 +178,11 @@ Haloxylon_salicornicum = Species(
     is_native=True,
     wildlife_value="Provides ground cover in extreme conditions; grazing for small mammals",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.58,
+    carbon_fraction=0.46,
+    root_shoot_ratio=0.60,
+    shade_cooling_delta_c=5.0,
+    et_rate_mm_day=1.2,
 )
 
 Lycium_shawii = Species(
@@ -192,6 +202,11 @@ Lycium_shawii = Species(
     is_native=True,
     wildlife_value="Berries attract birds; thorny cover provides nesting protection",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.62,
+    carbon_fraction=0.46,
+    root_shoot_ratio=0.50,
+    shade_cooling_delta_c=8.0,
+    et_rate_mm_day=2.0,
 )
 
 Aerva_javanica = Species(
@@ -210,6 +225,11 @@ Aerva_javanica = Species(
     is_native=True,
     wildlife_value="Seasonal ground cover; seeds support granivorous birds",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.45,
+    carbon_fraction=0.45,
+    root_shoot_ratio=0.40,
+    shade_cooling_delta_c=4.0,
+    et_rate_mm_day=1.8,
 )
 
 Leptadenia_pyrotechnica = Species(
@@ -228,6 +248,11 @@ Leptadenia_pyrotechnica = Species(
     is_native=True,
     wildlife_value="Deep-rooted shrub stabilizing sandy soils; browse for camels",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.55,
+    carbon_fraction=0.46,
+    root_shoot_ratio=0.65,
+    shade_cooling_delta_c=5.0,
+    et_rate_mm_day=1.0,
 )
 
 Tephrosia_apollinea = Species(
@@ -247,6 +272,11 @@ Tephrosia_apollinea = Species(
     is_native=True,
     wildlife_value="Nitrogen-fixing legume; improves soil; attracts pollinators",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.50,
+    carbon_fraction=0.46,
+    root_shoot_ratio=0.45,
+    shade_cooling_delta_c=4.0,
+    et_rate_mm_day=1.5,
 )
 
 
@@ -269,6 +299,11 @@ Salvia_spinosa = Species(
     is_native=True,
     wildlife_value="Aromatic foliage attracts pollinators; seeds support granivorous birds.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.42,
+    carbon_fraction=0.45,
+    root_shoot_ratio=0.40,
+    shade_cooling_delta_c=3.0,
+    et_rate_mm_day=1.2,
 )
 
 Ochradenus_baccatus = Species(
@@ -288,6 +323,11 @@ Ochradenus_baccatus = Species(
     is_native=True,
     wildlife_value="Berries eaten by birds and small mammals; drought-deciduous adaptation.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.55,
+    carbon_fraction=0.46,
+    root_shoot_ratio=0.48,
+    shade_cooling_delta_c=6.0,
+    et_rate_mm_day=1.8,
 )
 
 Calotropis_procera = Species(
@@ -307,6 +347,11 @@ Calotropis_procera = Species(
     is_native=True,
     wildlife_value="Host plant for monarch butterfly relatives; fibrous bark used by birds for nesting.",
     carbon_sequestration_potential="medium",
+    wood_density_g_cm3=0.48,
+    carbon_fraction=0.46,
+    root_shoot_ratio=0.50,
+    shade_cooling_delta_c=9.0,
+    et_rate_mm_day=2.5,
 )
 
 Moringa_peregrina = Species(
@@ -325,6 +370,11 @@ Moringa_peregrina = Species(
     is_native=True,
     wildlife_value="Seeds produce valuable oil; flowers attract bees; drought-resistant pioneer species.",
     carbon_sequestration_potential="medium",
+    wood_density_g_cm3=0.52,
+    carbon_fraction=0.47,
+    root_shoot_ratio=0.40,
+    shade_cooling_delta_c=10.0,
+    et_rate_mm_day=3.0,
 )
 
 Fagonia_indica = Species(
@@ -343,6 +393,11 @@ Fagonia_indica = Species(
     is_native=True,
     wildlife_value="Ground-level cover in extreme desert; flowers provide nectar for small insects.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.40,
+    carbon_fraction=0.45,
+    root_shoot_ratio=0.35,
+    shade_cooling_delta_c=2.0,
+    et_rate_mm_day=0.8,
 )
 
 Rhazya_stricta = Species(
@@ -362,6 +417,11 @@ Rhazya_stricta = Species(
     is_native=True,
     wildlife_value="Drought-tolerant evergreen shrub; provides year-round cover in arid landscapes.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.56,
+    carbon_fraction=0.46,
+    root_shoot_ratio=0.45,
+    shade_cooling_delta_c=6.0,
+    et_rate_mm_day=1.5,
 )
 
 Capparis_spinosa = Species(
@@ -381,6 +441,11 @@ Capparis_spinosa = Species(
     is_native=True,
     wildlife_value="Edible flower buds; flowers attract pollinators; deep-rooted soil stabilizer.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.50,
+    carbon_fraction=0.46,
+    root_shoot_ratio=0.55,
+    shade_cooling_delta_c=5.0,
+    et_rate_mm_day=1.5,
 )
 
 Tamarix_aphylla = Species(
@@ -424,6 +489,11 @@ Ziziphus_nummularia = Species(
     is_native=True,
     wildlife_value="Thorny thicket provides protective nesting sites; fruits eaten by birds and mammals.",
     carbon_sequestration_potential="medium",
+    wood_density_g_cm3=0.72,
+    carbon_fraction=0.47,
+    root_shoot_ratio=0.40,
+    shade_cooling_delta_c=10.0,
+    et_rate_mm_day=3.0,
 )
 
 Cenchrus_ciliaris = Species(
@@ -444,6 +514,11 @@ Cenchrus_ciliaris = Species(
     is_native=True,
     wildlife_value="Key forage grass for wildlife and livestock; soil stabilizer; fire-resistant.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.30,
+    carbon_fraction=0.44,
+    root_shoot_ratio=0.75,
+    shade_cooling_delta_c=2.5,
+    et_rate_mm_day=3.5,
 )
 
 Pennisetum_divisum = Species(
@@ -463,6 +538,11 @@ Pennisetum_divisum = Species(
     is_native=True,
     wildlife_value="Ornamental native grass; seeds for granivorous birds; dune stabilization.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.28,
+    carbon_fraction=0.44,
+    root_shoot_ratio=0.70,
+    shade_cooling_delta_c=2.0,
+    et_rate_mm_day=3.0,
 )
 
 Salsola_imbricata = Species(
@@ -482,6 +562,11 @@ Salsola_imbricata = Species(
     is_native=True,
     wildlife_value="Halophytic pioneer species; stabilizes saline soils; forage for camels.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.42,
+    carbon_fraction=0.45,
+    root_shoot_ratio=0.50,
+    shade_cooling_delta_c=3.0,
+    et_rate_mm_day=1.0,
 )
 
 Arthrocnemum_macrostachyum = Species(
@@ -501,6 +586,11 @@ Arthrocnemum_macrostachyum = Species(
     is_native=True,
     wildlife_value="Critical salt marsh species; provides microhabitat for intertidal invertebrates; carbon sink in coastal sediments.",
     carbon_sequestration_potential="medium",
+    wood_density_g_cm3=0.38,
+    carbon_fraction=0.44,
+    root_shoot_ratio=0.55,
+    shade_cooling_delta_c=2.0,
+    et_rate_mm_day=2.5,
 )
 
 Suaeda_vermiculata = Species(
@@ -519,6 +609,11 @@ Suaeda_vermiculata = Species(
     is_native=True,
     wildlife_value="Dominant shrub in saline coastal plains; provides cover for ground-nesting birds.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.44,
+    carbon_fraction=0.45,
+    root_shoot_ratio=0.50,
+    shade_cooling_delta_c=3.0,
+    et_rate_mm_day=1.8,
 )
 
 Bassia_muricata = Species(
@@ -538,6 +633,11 @@ Bassia_muricata = Species(
     is_native=True,
     wildlife_value="Annual pioneer on disturbed saline soils; rapid ground cover establishment.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.40,
+    carbon_fraction=0.45,
+    root_shoot_ratio=0.45,
+    shade_cooling_delta_c=2.5,
+    et_rate_mm_day=1.2,
 )
 
 Convolvulus_prostratus = Species(
@@ -557,6 +657,11 @@ Convolvulus_prostratus = Species(
     is_native=True,
     wildlife_value="Prostrate groundcover with showy white flowers; attracts pollinators; suitable for green roof and xeriscape.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.30,
+    carbon_fraction=0.44,
+    root_shoot_ratio=0.35,
+    shade_cooling_delta_c=2.0,
+    et_rate_mm_day=2.0,
 )
 
 Teucrium_stocksianum = Species(
@@ -575,6 +680,11 @@ Teucrium_stocksianum = Species(
     is_native=True,
     wildlife_value="Aromatic dwarf shrub of Hajar Mountain wadis; bee forage species.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.42,
+    carbon_fraction=0.45,
+    root_shoot_ratio=0.40,
+    shade_cooling_delta_c=2.5,
+    et_rate_mm_day=1.0,
 )
 
 Gaillonia_aucheri = Species(
@@ -593,6 +703,11 @@ Gaillonia_aucheri = Species(
     is_native=True,
     wildlife_value="Endemic to Hajar Mountains; stabilizes rocky wadi slopes; nectar source for native bees.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.48,
+    carbon_fraction=0.46,
+    root_shoot_ratio=0.42,
+    shade_cooling_delta_c=3.5,
+    et_rate_mm_day=1.5,
 )
 
 Pulicaria_glutinosa = Species(
@@ -612,6 +727,11 @@ Pulicaria_glutinosa = Species(
     is_native=True,
     wildlife_value="Yellow daisy-like flowers attract desert butterflies; aromatic foliage; drought-deciduous.",
     carbon_sequestration_potential="low",
+    wood_density_g_cm3=0.44,
+    carbon_fraction=0.45,
+    root_shoot_ratio=0.40,
+    shade_cooling_delta_c=3.0,
+    et_rate_mm_day=1.6,
 )
 
 # ── Species collections ──────────────────────────────────────────────
