@@ -103,6 +103,14 @@ class Species:
     wildlife_value: Optional[str] = None
     carbon_sequestration_potential: Optional[str] = None
 
+    # Species-specific biomass parameters (v0.3)
+    # When set, engines use these instead of growth-form averages
+    wood_density_g_cm3: Optional[float] = None
+    carbon_fraction: Optional[float] = None
+    root_shoot_ratio: Optional[float] = None
+    shade_cooling_delta_c: Optional[float] = None
+    et_rate_mm_day: Optional[float] = None
+
     @property
     def display_name(self) -> str:
         """Human-readable display name with common name if available."""
