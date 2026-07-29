@@ -137,7 +137,7 @@ class UrbanHeatMitigation:
             species_canopy = canopy_per_plant * count
             total_canopy_area += species_canopy
 
-            cooling_per_plant = SHADE_COOLING_DELTA_C.get(sp.growth_form, 4.0)
+            cooling_per_plant = sp.shade_cooling_delta_c if sp.shade_cooling_delta_c is not None else SHADE_COOLING_DELTA_C.get(sp.growth_form, 4.0)
             weighted_cooling_sum += cooling_per_plant * species_canopy
 
         avg_surface_cooling = (
@@ -156,7 +156,7 @@ class UrbanHeatMitigation:
 
         for sp, count in self.species_counts.items():
             canopy_per_plant = CANOPY_AREA_M2.get(sp.growth_form, 2.0)
-            et_rate = ET_RATE_MM_DAY.get(sp.growth_form, 2.0)
+            et_rate = sp.et_rate_mm_day if sp.et_rate_mm_day is not None else ET_RATE_MM_DAY.get(sp.growth_form, 2.0)
 
             # ET volume = rate (mm/day) × area (m²) / 1000 (convert mm to m)
             et_per_plant_m3 = (et_rate / 1000) * canopy_per_plant
