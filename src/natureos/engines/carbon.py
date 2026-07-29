@@ -175,7 +175,7 @@ class CarbonEstimator:
         agc_kg = 0.0
         bgc_kg = 0.0
 
-         for sp, count in self.species_counts.items():
+        for sp, count in self.species_counts.items():
             agb_maturity = AGB_MATURITY_KG.get(sp.growth_form, 15.0)
             maturity_years = MATURITY_YEARS.get(sp.growth_form, 25)
 
