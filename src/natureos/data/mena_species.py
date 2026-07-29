@@ -37,7 +37,7 @@ Prosopis_cineraria = Species(
 )
 
 Ziziphus_spina_christi = Species(
-    scientific_name="Ziziphus spina-christi",
+    scientific_name="Ziziphus spina_christi",
     common_names=["Sidr"],
     growth_form=GrowthForm.TREE,
     water_regime=WaterRegime.LOW,
