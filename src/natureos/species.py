@@ -90,12 +90,12 @@ class Species:
     """
 
     scientific_name: str
-    common_names: list[str] = field(default_factory=list)
+    common_names: list[str] = field(default_factory=list, hash=False)
     growth_form: GrowthForm = GrowthForm.SHRUB
     water_regime: WaterRegime = WaterRegime.LOW
     salinity_tolerance: SalinityTolerance = SalinityTolerance.MODERATE
     thermal_tolerance: ThermalTolerance = ThermalTolerance.HIGH
-    ecosystems: list[EcosystemType] = field(default_factory=list)
+    ecosystems: list[EcosystemType] = field(default_factory=list, hash=False)
     mature_height_m: Optional[float] = None
     canopy_spread_m: Optional[float] = None
     root_depth_m: Optional[float] = None
