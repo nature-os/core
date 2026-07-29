@@ -54,7 +54,7 @@ class EcosystemType(str, Enum):
     URBAN_PARK = "urban_park"
 
 
-@dataclass
+@dataclass(unsafe_hash=True)
 class Species:
     """
     Represents a plant species with ecological traits.
