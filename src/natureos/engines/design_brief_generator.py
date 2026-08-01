@@ -161,14 +161,42 @@ class DesignBriefGenerator:
                 spacing = 2.0
                 quantity = 30
 
-            # Soil volume per unit
-            if sp.root_depth_m:
-                soil_volume = sp.root_depth_m * (spacing / 2) ** 2
-            else:
-                soil_volume = 1.5 * (spacing / 2) ** 2
+             # Global soil volume — uses species data when available, falls back to baselines
+            growth_form = sp.growth_form
 
-            total_soil = soil_volume * quantity
+            # Baseline by growth form
+            baseline_volumes = {
+                GrowthForm.TREE: 12.0,
+                GrowthForm.SHRUB: 0.4,
+                GrowthForm.GRASS: 0.08,
+                GrowthForm.GROUNDCOVER: 0.05,
+                GrowthForm.CLIMBER: 0.2,
+                GrowthForm.SUCCULENT: 0.15,
+                GrowthForm.MANGROVE: 8.0,
+            }
+            soil_volume = baseline_volumes.get(growth_form, 0.5)
 
+            # Scale by species dimensions if available
+            height = sp.mature_height_m
+            spread = sp.canopy_spread_m
+            root_depth = sp.root_depth_m
+
+            if growth_form == GrowthForm.TREE and height is not None:
+                if height >= 20.0:
+                    soil_volume = 30.0
+                elif height >= 10.0:
+                    soil_volume = 15.0
+                elif height < 5.0:
+                    soil_volume = 6.0
+
+            # Exact cylindrical root zone if spread and depth available
+            if spread is not None and root_depth is not None and spread > 0 and root_depth > 0:
+                import math
+                radius = spread / 2.0
+                calculated = math.pi * (radius ** 2) * root_depth * 0.6
+                soil_volume = max(0.05, min(round(calculated, 2), 50.0))
+
+            total_soil = round(soil_volume * quantity, 2)
             # Root barrier required if deep-rooted and near hardscape
             root_barrier = sp.growth_form == GrowthForm.TREE and (sp.root_depth_m or 5) > 3.0
 
@@ -208,7 +236,13 @@ class DesignBriefGenerator:
 
     def _generate_financials(self, specs: list[PlantingSpec]) -> FinancialAnalysis:
         """Generate financial ROI analysis."""
-        tariffs = WATER_TARIFFS.get(self.jurisdiction, WATER_TARIFFS[Jurisdiction.GENERIC])
+        # Jurisdiction tariff resolution with type-safe fallbacks
+        tariffs = WATER_TARIFFS.get(self.jurisdiction, WATER_TARIFFS.get(Jurisdiction.GENERIC))
+        potable_rate = float(tariffs.get("potable", 3.5))
+        tse_rate = float(tariffs.get("tse", 1.0))
+        tse_available = bool(tariffs.get("tse_availability", False))
+        tse_max_fraction = float(tariffs.get("tse_max_fraction", 0.85)) if tse_available else 0.0
+        currency_code = tariffs.get("currency", "AED")
         total_area = self.site.area_hectares * 10000
 
         # CAPEX
@@ -240,13 +274,27 @@ class DesignBriefGenerator:
                 maint = ANNUAL_MAINTENANCE_COST["groundcover"]
             opex_annual += maint * spec.quantity
 
-        water_cost_potable = self.water_budget_m3_yr * tariffs["potable"]
-        water_cost_tse = self.water_budget_m3_yr * tariffs["tse"]
-        total_opex = opex_annual + water_cost_potable
+        # Water costs — potable, TSE, and blended
+        annual_water_m3 = float(self.water_budget_m3_yr)
+        water_cost_potable = round(annual_water_m3 * potable_rate, 2)
+        water_cost_tse = round(annual_water_m3 * tse_rate, 2)
+        tse_compatible_pct = round(tse_max_fraction * 100.0, 1)
 
-        # Baseline: standard turf/palm landscape
-        standard_opex = total_area * 4.5  # ~AED 4.5/m²/yr for standard landscaping
+        if tse_available:
+            blended_water_cost = round(
+                (annual_water_m3 * tse_max_fraction * tse_rate) +
+                (annual_water_m3 * (1.0 - tse_max_fraction) * potable_rate), 2
+            )
+        else:
+            blended_water_cost = water_cost_potable
+
+        total_opex = opex_annual + blended_water_cost
+
+        # Baseline: standard turf + exotic palm landscape (~AED 6.5/m²/yr)
+        standard_opex = total_area * 6.5
         annual_savings = standard_opex - total_opex
+        if annual_savings < 0:
+            annual_savings = 0
         savings_pct = (annual_savings / standard_opex * 100) if standard_opex > 0 else 0
 
         carbon_value = self.carbon_tco2e * CARBON_CREDIT_PRICE_PER_TCO2E
@@ -259,7 +307,7 @@ class DesignBriefGenerator:
             savings_pct=round(savings_pct, 1),
             water_cost_potable_aed=round(water_cost_potable, 0),
             water_cost_tse_aed=round(water_cost_tse, 0),
-            tse_compatible_pct=85.0 if tariffs.get("tse_availability", False) else 0.0,
+            tse_compatible_pct=tse_compatible_pct,
             carbon_credit_value_usd=round(carbon_value, 0),
             soil_engineering_cost_aed=round(soil_engineering, 0),
             payback_years=round(total_capex / annual_savings, 1) if annual_savings > 0 else 0,
