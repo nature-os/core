@@ -164,7 +164,7 @@ class DesignBriefGenerator:
              # Global soil volume — uses species data when available, falls back to baselines
             growth_form = sp.growth_form
 
-            # Baseline by growth form
+               # Baseline by growth form
             baseline_volumes = {
                 GrowthForm.TREE: 12.0,
                 GrowthForm.SHRUB: 0.4,
@@ -183,9 +183,9 @@ class DesignBriefGenerator:
 
             if growth_form == GrowthForm.TREE and height is not None:
                 if height >= 20.0:
-                    soil_volume = 30.0
-                elif height >= 10.0:
                     soil_volume = 15.0
+                elif height >= 10.0:
+                    soil_volume = 12.0
                 elif height < 5.0:
                     soil_volume = 6.0
 
@@ -194,7 +194,19 @@ class DesignBriefGenerator:
                 import math
                 radius = spread / 2.0
                 calculated = math.pi * (radius ** 2) * root_depth * 0.6
-                soil_volume = max(0.05, min(round(calculated, 2), 50.0))
+                soil_volume = max(0.05, min(round(calculated, 2), 15.0))
+
+            # Municipal Engineering Vault Upper Limits (m³ per plant)
+            max_volumes = {
+                GrowthForm.TREE: 15.0,
+                GrowthForm.SHRUB: 0.50,
+                GrowthForm.GRASS: 0.10,
+                GrowthForm.GROUNDCOVER: 0.05,
+                GrowthForm.CLIMBER: 0.50,
+                GrowthForm.SUCCULENT: 0.20,
+                GrowthForm.MANGROVE: 8.0,
+            }
+            soil_volume = min(soil_volume, max_volumes.get(growth_form, 0.50))
 
             total_soil = round(soil_volume * quantity, 2)
             # Root barrier required if deep-rooted and near hardscape
@@ -238,8 +250,8 @@ class DesignBriefGenerator:
         """Generate financial ROI analysis."""
         # Jurisdiction tariff resolution with type-safe fallbacks
         tariffs = WATER_TARIFFS.get(self.jurisdiction, WATER_TARIFFS.get(Jurisdiction.GENERIC))
-        potable_rate = float(tariffs.get("potable", 3.5))
-        tse_rate = float(tariffs.get("tse", 1.0))
+        potable_rate = float(tariffs.get("potable", 8.80))  # DEWA commercial incl. surcharge
+        tse_rate = float(tariffs.get("tse", 1.70))          # DEWA TSE rate
         tse_available = bool(tariffs.get("tse_availability", False))
         tse_max_fraction = float(tariffs.get("tse_max_fraction", 0.85)) if tse_available else 0.0
         currency_code = tariffs.get("currency", "AED")
