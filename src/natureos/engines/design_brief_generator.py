@@ -52,9 +52,9 @@ class FinancialAnalysis:
     water_cost_potable_aed: float
     water_cost_tse_aed: float
     tse_compatible_pct: float
-    blended_water_cost_aed: float = 0.0
     carbon_credit_value_usd: float
     soil_engineering_cost_aed: float
+    blended_water_cost_aed: float = 0.0
     payback_years: float = 0.0
 
 
