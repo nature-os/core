@@ -52,6 +52,7 @@ class FinancialAnalysis:
     water_cost_potable_aed: float
     water_cost_tse_aed: float
     tse_compatible_pct: float
+    blended_water_cost_aed: float = 0.0
     carbon_credit_value_usd: float
     soil_engineering_cost_aed: float
     payback_years: float = 0.0
@@ -320,6 +321,7 @@ class DesignBriefGenerator:
             water_cost_potable_aed=round(water_cost_potable, 0),
             water_cost_tse_aed=round(water_cost_tse, 0),
             tse_compatible_pct=tse_compatible_pct,
+            blended_water_cost_aed=round(blended_water_cost, 0),
             carbon_credit_value_usd=round(carbon_value, 0),
             soil_engineering_cost_aed=round(soil_engineering, 0),
             payback_years=round(total_capex / annual_savings, 1) if annual_savings > 0 else 0,
